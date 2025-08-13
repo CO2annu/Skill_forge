@@ -1,4 +1,4 @@
-# Skill Forge
+# Skill Forge(Still in progress)
 
 Skill Forge is a skill-based service marketplace where users can create, browse, buy, and sell services, leave reviews, and get notifications.  
 The platform follows a layered architecture with clear separation between UI, controllers, services, repositories, and database.
