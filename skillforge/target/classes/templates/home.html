@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Forge - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+        }
+
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ecf0f1;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .main-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 15px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 15px 25px;
+            font-size: 1rem;
+            border: none;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background-color: #2471a3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Skill Forge</div>
+        <nav>
+            <a href="/skills">Skills</a>
+            <a href="/buy">Buy Service</a>
+            <a href="/sell">Sell Service</a>
+        </nav>
+        <div class="profile">
+            👤 Welcome, User!
+        </div>
+    </header>
+
+    <div class="main-content">
+        <h1>Find the skill you need</h1>
+        <div class="search-box">
+            <input type="text" placeholder="Search for a skill...">
+            <button>Search</button>
+        </div>
+    </div>
+
+</body>
+</html>
