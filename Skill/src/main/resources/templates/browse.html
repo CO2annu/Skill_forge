@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browse Skills | Skill Forge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/}">Skill Forge</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" th:href="@{/browse}">Browse Skills</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/marketplace}">Marketplace</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/buy}">Buy Skills</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/sell}">Sell Skills</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/notifications}">Notifications</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/profile}">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Browse Skills</h1>
+      <p class="lead">Explore a wide range of talents and expertise from our vibrant community.</p>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <section class="container my-4">
+    <form class="d-flex" th:action="@{/browse}" method="get">
+      <input class="form-control me-2" type="search" name="query" placeholder="Search skills..." />
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+  </section>
+
+  <!-- Skill Grid -->
+  <section class="container py-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4" th:if="${skills != null}">
+      <div class="col" th:each="skill : ${skills}">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title" th:text="${skill.title}">Skill Title</h5>
+            <p class="card-text text-muted" th:text="${skill.description}">Skill description goes here.</p>
+          </div>
+          <div class="card-footer text-end">
+            <a th:href="@{'/marketplace?skill=' + ${skill.id}}" class="btn btn-sm btn-primary">View Listings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div th:if="${skills == null || skills.isEmpty()}" class="text-center text-muted py-5">
+      <p>No skills found. Try searching or check back later!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+      <p class="mb-0">© 2025 Skill Forge. Empowering expertise, one skill at a time.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

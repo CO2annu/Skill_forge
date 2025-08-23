@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skill Forge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/}">Skill Forge</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" th:href="@{/browse}">Browse Skills</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/marketplace}">Marketplace</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/buy}">Buy Skills</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/sell}">Sell Skills</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/notifications}">Notifications</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/profile}">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-light text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold text-primary">Welcome to Skill Forge</h1>
+      <p class="lead text-muted">Your one-stop marketplace for buying and selling expertise.</p>
+      <div class="mt-4">
+        <a th:href="@{/marketplace}" class="btn btn-primary btn-lg me-2">Explore Marketplace</a>
+        <a th:href="@{/sell}" class="btn btn-outline-secondary btn-lg">Start Selling</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="container py-5">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <h3>Discover Talent</h3>
+        <p>Browse a wide range of skills from verified experts across industries.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Monetize Your Expertise</h3>
+        <p>Create listings, set your price, and connect with buyers instantly.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Stay Notified</h3>
+        <p>Get real-time updates on offers, reviews, and profile activity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">© 2025 Skill Forge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
